@@ -67,9 +67,7 @@ function Home() {
             <br />
             <br />
             {
-                isVerified ?
-                    <Link to='login'>Go to Login</Link> :
-                    <Link to='login' hidden>Go to Login</Link>
+                isVerified && <Link to='login'>Go to Login</Link>
             }
         </form>
     )
