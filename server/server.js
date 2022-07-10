@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const fetch = require('node-fetch');
@@ -8,7 +9,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 //Personal Secret Key
-const secretKey = "***REMOVED***";
+const secretKey = process.env.SECRET_KEY;
 
 app.post('/post', async (req, res) => {
 
@@ -47,5 +48,5 @@ async function getVerification(captcha) {
 }
 
 app.listen(3000, () => {
-    console.log('Server running on port 3000.');
+    console.log(`Server running!`);
 })
